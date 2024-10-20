@@ -1,7 +1,7 @@
 # SLL Algorithms
 
 ## Algorithm insert (newNode, predecessor)
-
+```
 In: New node to be inserted after predecessor.
 Out: {Insert newNode in linked list after predecessor; newNode
 
@@ -15,6 +15,7 @@ else {
     make newNode point to succ
     make predecessor point to newNode
 }
+```
 
 ## Explanation for insert algorithm
 
@@ -32,6 +33,7 @@ else {
 
 ## Algorithm delete (nodeToDelete)
 
+```
 In: node to delete
 Out: true if the node was deleted, false otherwise
 
@@ -49,6 +51,7 @@ else front = front.getNext()
 
 return true
 }
+```
 
 ## Explanation for delete algorithm
 

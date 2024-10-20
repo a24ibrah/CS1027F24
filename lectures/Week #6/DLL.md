@@ -1,9 +1,9 @@
 # DLL Algorithms
 
 ## Algorithm insert (newNode, predecessor)
-
-In: New node to be inserted after predecessor.
-Out: {Inserts newNode in the linked list after predecessor.}
+```
+- In: New node to be inserted after predecessor.
+- Out: {Inserts newNode in the linked list after predecessor.}
 
 if predecessor is null then {
     make newNode point to front
@@ -19,12 +19,13 @@ else {
     make predecessor point to newNode
     if succ is not null then
         make succ's previous point to newNode
-    else 
+    else
         tail = newNode  // Update tail if inserting at the end
 }
+```
 
 ## Algorithm delete (nodeToDelete)
-
+```
 In: Node to be deleted.
 Out: true if the node was deleted, false otherwise.
 
@@ -48,6 +49,7 @@ else {
 
     return true
 }
+```
 
 ## Explanation
 
