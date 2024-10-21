@@ -2,8 +2,8 @@
 
 ## Algorithm insert (newNode, predecessor)
 ```
-- In: New node to be inserted after predecessor.
-- Out: {Inserts newNode in the linked list after predecessor.}
+In: New node to be inserted after predecessor.
+Out: {Inserts newNode in the linked list after predecessor.}
 
 if predecessor is null then {
     make newNode point to front
