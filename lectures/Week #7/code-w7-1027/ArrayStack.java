@@ -1,4 +1,3 @@
-
 // Class that implements the StackADT interface
 public class ArrayStack<T> implements StackADT<T> {
     private T[] stack;
@@ -17,15 +16,14 @@ public class ArrayStack<T> implements StackADT<T> {
         if (top < capacity - 1) {
             stack[++top] = element;
         } else {
-            System.out.println("Stack is full");
+            throw new IllegalStateException("Stack is full"); // {{ edit_1 }}
         }
     }
 
     @Override
     public T pop() {
         if (isEmpty()) {
-            System.out.println("Stack is empty");
-            return null;
+            throw new IllegalStateException("Stack is empty"); // {{ edit_2 }}
         }
         return stack[top--];
     }
@@ -33,8 +31,7 @@ public class ArrayStack<T> implements StackADT<T> {
     @Override
     public T peek() {
         if (isEmpty()) {
-            System.out.println("Stack is empty");
-            return null;
+            throw new IllegalStateException("Stack is empty"); // {{ edit_3 }}
         }
         return stack[top];
     }
@@ -51,15 +48,12 @@ public class ArrayStack<T> implements StackADT<T> {
 
     @Override
     public String toString() {
-    StringBuilder result = new StringBuilder("Stack: ");
-    // StringBuilder is a class in Java that is used to create mutable sequences of characters.
-    // It provides a convenient way to create and manipulate strings in Java.
-
-    // Append the elements of the stack to the result
-    for (int i = 0; i <= top; i++) {
-        result.append(stack[i]).append(" ");
+        StringBuilder result = new StringBuilder("Stack: ");
+        // Append the elements of the stack to the result
+        for (int i = 0; i <= top; i++) {
+            result.append(stack[i]);
+            if (i < top) result.append(" "); // {{ edit_4 }} to avoid trailing space
+        }
+        return result.toString();
     }
-    return result.toString();
-}
-
 }
